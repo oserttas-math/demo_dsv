@@ -1,9 +1,16 @@
 from fastapi import FastAPI
-import uvicorn  # ?
+import uvicorn
 import pickle
-
+import pandas as pd
 
 app = FastAPI()
+model = pickle.load(open("catboost_model-2.pkl", "rb"))
+
+
+def model_pred(features):
+    test_data = pd.DataFrame([features])
+    prediction = model.predict(test_data)
+    return int(prediction[0])
 
 
 @app.get('/')
