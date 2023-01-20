@@ -25,8 +25,8 @@ jobs:
           with:
             fetch-depth: 0
         
-        - name: GitHub Tag
-          uses: mathieudutour/github-tag-action@v6.1
+        # - name: GitHub Tag
+        #   uses: mathieudutour/github-tag-action@v6.1
            
         - name: Set up Python 3.9
           uses: actions/setup-python@v1
