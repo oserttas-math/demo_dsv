@@ -29,8 +29,9 @@ jobs:
           uses: actions/setup-python@v1
           with:
             python-version: 3.9
-        - name: Bump version and push tag
-          uses: anothrNick/github-tag-action@master
+    
+        - name: GitHub Tag
+          uses: mathieudutour/github-tag-action@v6.1
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             REPO_OWNER: oserttas-math
