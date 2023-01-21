@@ -40,7 +40,7 @@ async def predict(Age: int, RestingBP: int, Cholesterol: int, Oldpeak: float, Fa
 
 if __name__ == '__main__':
 
-    uvicorn.run(app, port=500, host='0.0.0.0')
+    uvicorn.run(app, port=8080, host='0.0.0.0')
 
 # sample query:
 # curl -X 'GET' \
