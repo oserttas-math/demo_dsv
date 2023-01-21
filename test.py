@@ -10,5 +10,5 @@ new_data = {'Age': 68,
 
 
 def test_predict():
-    prediction = model_pred(*new_data)
+    prediction = model_pred(new_data)
     assert prediction == 1

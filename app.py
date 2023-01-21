@@ -20,11 +20,17 @@ async def root():
 
 @app.get('/predict')
 async def predict(Age: int, RestingBP: int, Cholesterol: int, Oldpeak: float, FastingBS: int, MaxHR: int):
-    model = pickle.load(open('catboost_model-2.pkl', 'rb'))
 
-    prediction = model.predict(
-        [[Age, RestingBP, Cholesterol, Oldpeak, FastingBS, MaxHR]]
-    )
+    incoming_data = {
+        "Age": Age,
+        "RestingBP": RestingBP,
+        "Cholesterol": Cholesterol,
+        "Oldpeak": Oldpeak,
+        "FastingBS": FastingBS,
+        "MaxHR": MaxHR
+    }
+
+    prediction = model_pred(incoming_data)
 
     if prediction == 0:
         return {"You are well. No worries :)"}
